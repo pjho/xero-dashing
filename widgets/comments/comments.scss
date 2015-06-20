@@ -1,0 +1,53 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #26B0D7;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$moreinfo-color:    rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-comment styles
+// ----------------------------------------------------------------------------
+.widget-comments {
+
+  background-color: $background-color;
+
+  .title {
+    color: $title-color;
+    margin-bottom: 15px;
+  }
+
+  .name {
+    padding-left: 5px;
+  }
+
+  .comment-container {
+    display: none;
+
+    img{
+      border-radius:50px; 
+    }
+    h3{
+      margin-bottom: 10px;
+      span{
+        display:block;
+        margin: 10px 0;
+      }
+    }
+    .comment{
+      span{
+        font-weight: bold;
+        font-style: italic;  
+      }
+    }
+    .twitter-xero{ color: #45474D; }
+    .twitter-coffee{ color: #F63770; }
+
+  }
+
+  .more-info {
+    color: $moreinfo-color;
+  }
+
+}
