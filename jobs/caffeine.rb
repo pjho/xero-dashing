@@ -1,5 +1,5 @@
 xero_staff = 1138
-kgs_per_week = 322;
+kgs_per_week = 212;
 per_coffee_weight = 0.015 # kgs i.e. 15 grams per coffee
 
 total_coffees_per_week = kgs_per_week / per_coffee_weight
@@ -61,6 +61,7 @@ SCHEDULER.every '1m' do
   todays_values = time_multiplier_map[0..hour].each_with_index.map do |v, i| 
     { :x => i , :y => (v / 100.0 * total_coffees_today).round, :name => i } 
   end
+  
   ##
   # TODO - Configure the graph to accomodate non-linear x-axis to enable data for the last 24 hours
   # points = yesterdays_values.concat(todays_values)
@@ -69,14 +70,14 @@ SCHEDULER.every '1m' do
 ##
 # Set some interesting numbers based off the values we have to display in list
 stats = [
-  {:label=>"# of Xero Staff", :value=>xero_staff},
-  {:label=>"Avg. Coffees Per Person Per Day", :value=>coffees_per_staff_member.round(2)},
-  {:label=>"Grams of Coffee per cup", :value=>per_coffee_weight * 1000},
+  {:label=>"Number of Xero Staff", :value=>xero_staff},
   {:label=>"Kgs Coffee Per Week", :value=>kgs_per_week.round(2)},
+  {:label=>"Grams of Coffee per cup", :value=>per_coffee_weight * 1000},
+  {:label=>"Avg. Number of Coffees Per Day", :value=>av_coffees_per_day.round},
+  {:label=>"Avg. Coffees Per Person Per Day", :value=>coffees_per_staff_member.round(2)},
   {:label=>"Number of Coffees Per Week", :value=>total_coffees_per_week.round},
-  {:label=>"Avg Number of Coffees Per Day", :value=>av_coffees_per_day.round},
-  {:label=>"# Coffees on a Sunday", :value=>(av_coffees_per_day * day_multiplier_map[6]).round},
-  {:label=>"# Coffees on a Monday", :value=>(av_coffees_per_day * day_multiplier_map[0]).round},
+  {:label=>"Number of Coffees on a Sunday", :value=>(av_coffees_per_day * day_multiplier_map[6]).round},
+  {:label=>"Number of Coffees on a Monday", :value=>(av_coffees_per_day * day_multiplier_map[0]).round},
 ]
 
   send_event('caffeine_dpc', { value: daily_percent_consumed.to_i, moreinfo: "of an estimated #{total_coffees_today.to_i} coffees" })
