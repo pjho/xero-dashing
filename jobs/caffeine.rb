@@ -71,7 +71,7 @@ SCHEDULER.every '1m' do
 stats = [
   {:label=>"# of Xero Staff", :value=>xero_staff},
   {:label=>"Avg. Coffees Per Person Per Day", :value=>coffees_per_staff_member.round(2)},
-  {:label=>"Grams of Coffee per cup", :value=>per_coffee_weight.round(2)},
+  {:label=>"Grams of Coffee per cup", :value=>per_coffee_weight * 1000},
   {:label=>"Kgs Coffee Per Week", :value=>kgs_per_week.round(2)},
   {:label=>"Number of Coffees Per Week", :value=>total_coffees_per_week.round},
   {:label=>"Avg Number of Coffees Per Day", :value=>av_coffees_per_day.round},
