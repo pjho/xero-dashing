@@ -61,7 +61,8 @@ SCHEDULER.every '1m' do
   todays_values = time_multiplier_map[0..hour].each_with_index.map do |v, i| 
     { :x => i , :y => (v / 100.0 * total_coffees_today).round, :name => i } 
   end
-
+  ##
+  # TODO - Configure the graph to accomodate non-linear x-axis to enable data for the last 24 hours
   # points = yesterdays_values.concat(todays_values)
   points = todays_values
 
