@@ -5,10 +5,10 @@
 #= require_directory .
 #= require_tree ../../widgets
 
-console.log("Yeah! The dashboard has started!")
+# console.log("Yeah! The dashboard has started!")
 
 Dashing.on 'ready', ->
-  Dashing.debugMode = true
+  # Dashing.debugMode = true
   Dashing.widget_margins ||= [5, 5]
   Dashing.widget_base_dimensions ||= [300, 360]
   Dashing.numColumns ||= 4

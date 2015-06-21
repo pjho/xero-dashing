@@ -11,39 +11,37 @@
           data-moreinfo="Protip: You can drag the widgets around!"></div>
     </li>    
 
-
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="dpc" 
-          data-view="Meter" 
-          data-title="% Consumed Today" 
-          data-min="0" 
-          data-max="100"></div>
+      <div data-id="caffeine_totals" data-view="TotalToday" data-title="No. Coffees consumed today" data-moreinfo="By Xero staff worldwide"></div>
     </li>
 
-
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="valuation" data-view="Number" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$"></div>
+      <div data-id="caffeine_dpc" 
+          data-view="Meter" 
+          data-title="% of Daily Total" 
+          data-suffix="%" 
+          data-min="0" 
+          data-max="100"
+          ></div>
     </li>
     
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="buzzwords" 
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
+      <div data-id="caffeine_in_numbers" 
           data-view="List" 
           data-unordered="true" 
-          data-title="Cunsumption By Department" 
-          data-moreinfo="# of times said around the office"></div>
+          data-title="Xero Coffee In Numbers" 
+          data-moreinfo="-"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="caffeine_hour_map" data-view="Graph" data-title="Coffees Per Hour" data-moreinfo="since midnight this morning"></div>
     </li>
    
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="twitter_mentions" 
-          data-view="Comments" 
-          data-moreinfo="#xero #coffee"></div>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="twitter_mentions" data-view="Comments" data-moreinfo="#xero #coffee"></div>
     </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#585a60"></div>
-    </li>
-
-
+    
   </ul>
 
   <!--<center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome</div></center>-->

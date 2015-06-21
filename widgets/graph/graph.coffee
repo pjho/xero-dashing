@@ -4,7 +4,12 @@ class Dashing.Graph extends Dashing.Widget
     return @get('displayedValue') if @get('displayedValue')
     points = @get('points')
     if points
-      points[points.length - 1].y
+      length = points.length
+      total = points.reduce ((previousValue, currentValue) ->
+        previousValue + currentValue.y
+      ), 0
+      parseInt(total / length)
+
 
   ready: ->
     container = $(@node).parent()
@@ -26,7 +31,7 @@ class Dashing.Graph extends Dashing.Widget
 
     @graph.series[0].data = @get('points') if @get('points')
 
-    x_axis = new Rickshaw.Graph.Axis.Time(graph: @graph)
+    x_axis = new Rickshaw.Graph.Axis.X(graph: @graph, tickFormat: (x) -> if x == 0 then "" else if x > 11 then x + "pm" else x + "am")
     y_axis = new Rickshaw.Graph.Axis.Y(graph: @graph, tickFormat: Rickshaw.Fixtures.Number.formatKMBT)
     @graph.render()
 
