@@ -3,8 +3,8 @@
 // ----------------------------------------------------------------------------
 $background-color:  #585a60;
 
-$title-color:       rgba(255, 255, 255, 0.7);
-$moreinfo-color:    rgba(255, 255, 255, 0.3);
+$title-color:       rgba(255, 255, 255, 0.9);
+$moreinfo-color:    rgba(255, 255, 255, 0.7);
 $tick-color:        rgba(0, 0, 0, 0.4);
 
 
@@ -19,8 +19,8 @@ $tick-color:        rgba(0, 0, 0, 0.4);
 
   svg {
     position: absolute;
-    opacity: 0.4;
-    fill-opacity: 0.4;
+    // opacity: 0.4;
+    fill-opacity: 0.8;
     left: 0px;
     top: 0px;
   }
@@ -37,23 +37,26 @@ $tick-color:        rgba(0, 0, 0, 0.4);
   .more-info {
     color: $moreinfo-color;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 14px;
     margin-top: 0;
+    bottom:auto;
+    position: relative;
+    z-index: 10;
   }
+.x_grid_d3{ display:none; }
 
-  .x_tick {
+.x_ticks_d3{
     position: absolute;
     bottom: 0;
-    .title {
-      font-size: 20px;
-      color: $tick-color;
-      opacity: 0.5;
-      padding-bottom: 3px;
-    }
+    font-size: 15px;
+    color: $tick-color;
+    opacity: 0.5;
+    padding-bottom: 3px;
+    .title {}
   }
 
   .y_ticks {
-    font-size: 20px;
+    font-size: 15px;
     fill: $tick-color;
     fill-opacity: 1;
   }
@@ -61,7 +64,5 @@ $tick-color:        rgba(0, 0, 0, 0.4);
   .domain {
     display: none;
   }
-  .more-info{
-    position: static;
-  }
+
 }

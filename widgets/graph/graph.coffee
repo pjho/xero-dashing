@@ -23,7 +23,7 @@ class Dashing.Graph extends Dashing.Widget
       renderer: @get("graphtype")
       series: [
         {
-        color: "#fff",
+        color: "#00B8DE",
         data: [{x:0, y:0}]
         }
       ]

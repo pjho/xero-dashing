@@ -30,7 +30,7 @@ day_multiplier_map = [1.7, 1.2, 1.4, 1.2, 1.2, 0.2, 0.1 ]
 
 
 
-SCHEDULER.every '5s' do
+SCHEDULER.every '1m' do
 # SCHEDULER.every '15m' do
   daily_percent_consumed = 0
   now = Time.now
@@ -78,11 +78,7 @@ stats = [
   {:label=>"# Coffees on a Monday", :value=>(av_coffees_per_day * day_multiplier_map[0]).round},
 ]
 
-
-
-
-  
-  send_event('caffeine_dpc', { value: daily_percent_consumed.to_i, moreinfo: "of an estimated #{total_coffees_today.to_i} coffees." })
+  send_event('caffeine_dpc', { value: daily_percent_consumed.to_i, moreinfo: "of an estimated #{total_coffees_today.to_i} coffees" })
   send_event('caffeine_totals',{ total_today: total_coffees_today.to_i, current_consumed: current_number_consumed.to_i })
   send_event('caffeine_hour_map',{ points: points})
   send_event('caffeine_in_numbers',{ items: stats })
